@@ -33,6 +33,7 @@
   }
   .content-right{
     margin-left: 200px;
+    min-width: 600px;
     .nav-top{
       height:50px;
       line-height:50px;
