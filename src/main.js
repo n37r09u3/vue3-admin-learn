@@ -11,6 +11,8 @@ console.log('env=>',import.meta.env)
 import config from './config'
 import request from './utils/request'
 app.config.globalProperties.$request = request
+import storage from './utils/storage'
+app.config.globalProperties.$storage = storage
 
 app.use(router)
 app.use(ElementPlus)
