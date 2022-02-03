@@ -91,18 +91,23 @@ const userauth = useUserAuthStore()
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid #ddd;
-      padding: 0 20px;
       .nav-left{
         display:flex;
         align-items: center;
+
         .menu-fold{
-          margin-right:16px;
-          position: relative;
-          top: 1px;
+          padding:0 16px;
+          cursor:pointer;
+          &:hover {
+            background: #eee;
+          }
         }
         .bread{
-
+          margin-left: 5px;
         }
+      }
+      .user-info{
+        margin-right: 16px;
       }
     }
     .wrapper{
