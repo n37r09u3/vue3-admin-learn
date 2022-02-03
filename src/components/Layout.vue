@@ -4,7 +4,7 @@
     <div class="content-right">
       <div class="nav-top">
         <div class="bread">面包屑</div>
-        <div class="user-info">用户</div>
+        <div class="user-info">{{userauth.userInfo.userName}}</div>
       </div>
       <div class="wrapper">
         <div class="main">
@@ -17,7 +17,9 @@
 </template>
 
 <script setup>
+import {useUserAuthStore} from "../store";
 
+const userauth = useUserAuthStore()
 </script>
 <style scoped lang="scss">
 .basic-layout{

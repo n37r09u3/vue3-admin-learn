@@ -1,12 +1,12 @@
 import {createRouter,createWebHashHistory} from "vue-router";
-import Home from "../components/Home.vue"  //需要vue结尾
+import Layout from "../components/Layout.vue"  //需要vue结尾
 import Welcome from "../views/Welcome.vue"
 
 const routes =[
     {
         name: 'home',
         path: '/',
-        component: Home,
+        component: Layout,
         meta:{
             title:'首页'
         },
