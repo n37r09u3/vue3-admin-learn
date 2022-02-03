@@ -51,6 +51,7 @@ const userauth = useUserAuthStore()
       .main{
         background: #fff;
         height:100%;
+        box-shadow: 0 0 10px 3px #c7c9cb4d;
       }
     }
   }
