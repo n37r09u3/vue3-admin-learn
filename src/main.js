@@ -13,12 +13,14 @@ import request from './utils/request'
 app.config.globalProperties.$request = request
 import storage from './utils/storage'
 app.config.globalProperties.$storage = storage
-
+import { createPinia } from 'pinia'
+const pinia = createPinia()
 import * as Icons from '@element-plus/icons-vue'
 // 注册Icons 全局组件
 Object.keys(Icons).forEach(key => {
     app.component(key, Icons[key])
 })
+app.use(pinia)
 app.use(router)
 app.use(ElementPlus)
 app.mount('#app')
