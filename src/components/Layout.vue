@@ -36,17 +36,15 @@
 
       <div class="nav-top">
         <div class="nav-left">
-          <div class="menu-fold"> <el-icon><fold /></el-icon></div>
+          <div class="menu-fold"><el-icon><fold /></el-icon></div>
           <div class="bread">面包屑</div>
         </div>
-
         <div class="user-info">{{userauth.userInfo.userName}}</div>
       </div>
       <div class="wrapper">
         <div class="main">
           <router-view />
         </div>
-
       </div>
     </div>
   </div>
@@ -94,7 +92,18 @@ const userauth = useUserAuthStore()
       justify-content: space-between;
       border-bottom: 1px solid #ddd;
       padding: 0 20px;
+      .nav-left{
+        display:flex;
+        align-items: center;
+        .menu-fold{
+          margin-right:16px;
+          position: relative;
+          top: 1px;
+        }
+        .bread{
 
+        }
+      }
     }
     .wrapper{
       background: #eef0f3;
@@ -104,6 +113,7 @@ const userauth = useUserAuthStore()
         background: #fff;
         height:100%;
         box-shadow: 0 0 10px 3px #c7c9cb4d;
+        min-height:600px
       }
     }
   }
