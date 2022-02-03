@@ -64,7 +64,7 @@ const userauth = useUserAuthStore()
     height:100vh;
     background-color: #001529;
     color: white;
-    overflow-y: auto;
+
     transition: width 0.5s;
     .logo{
       display:flex;
@@ -79,7 +79,9 @@ const userauth = useUserAuthStore()
     }
     .nav-menu{
       border-right: none;
-      //height:calc(100vh - 50px);
+      height:calc(100vh - 50px);
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
   .content-right{
@@ -94,7 +96,6 @@ const userauth = useUserAuthStore()
       .nav-left{
         display:flex;
         align-items: center;
-
         .menu-fold{
           padding:0 16px;
           cursor:pointer;
@@ -114,11 +115,12 @@ const userauth = useUserAuthStore()
       background: #eef0f3;
       padding:20px;
       height:calc(100vh - 50px);
+      min-height:600px;
       .main{
         background: #fff;
         height:100%;
         box-shadow: 0 0 10px 3px #c7c9cb4d;
-        min-height:600px
+        min-height:600px;
       }
     }
   }
