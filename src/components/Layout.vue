@@ -139,7 +139,7 @@ const logout =() =>{
 
   .content-right {
     margin-left: 200px;
-    min-width: 600px;
+    min-width: 960px;
     &.fold{
       margin-left: 64px;
     }
@@ -195,6 +195,7 @@ const logout =() =>{
       padding: 20px;
       height: calc(100vh - 50px);
       min-height: 500px;
+
 
       .main {
         background: #fff;
