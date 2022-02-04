@@ -15,11 +15,16 @@
 
 </script>
 <style scoped lang="scss">
+
+
 .welcome {
   display:flex;
   justify-content:center;
   align-items:center;
   height:100%;
+  background: #fff;
+  box-shadow: 0 0 10px 3px #c7c9cb4d;
+  min-height: 500px;
   .content {
     position: relative;
     bottom:40px;

@@ -27,6 +27,6 @@ for (const iconName in ELIcons) {
 
 app.use(pinia)
 app.use(router)
-app.use(ElementPlus)
+app.use(ElementPlus,{size:'small', zIndex:3000})
 app.mount('#app')
 

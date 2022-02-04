@@ -51,9 +51,7 @@
         </div>
       </div>
       <div class="wrapper">
-        <div class="main">
           <router-view/>
-        </div>
       </div>
     </div>
   </div>
@@ -208,14 +206,6 @@ onMounted(()=>{
       padding: 20px;
       height: calc(100vh - 50px);
       min-height: 500px;
-
-
-      .main {
-        background: #fff;
-        height: 100%;
-        box-shadow: 0 0 10px 3px #c7c9cb4d;
-        min-height: 500px;
-      }
     }
   }
 }
