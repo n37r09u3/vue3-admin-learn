@@ -7,5 +7,19 @@ export default {
              method: 'POST',
              data: params
          })
-    }
+    },
+    getNoticeCount(){
+        return request({
+            url:'/leave/count',
+            method: 'get',
+            data: {}
+        })
+    },
+    getMenuList(params){
+        return request({
+            url:'/menu/list',
+            method: 'get',
+            data: {}
+        })
+    },
 }

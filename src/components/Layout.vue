@@ -13,26 +13,7 @@
           text-color="#fff"
           :collapse="isCollapse"
       >
-        <el-sub-menu index="1">
-          <template #title>
-            <el-icon>
-              <setting/>
-            </el-icon>
-            <span>系统管理</span>
-          </template>
-          <el-menu-item index="1-1">用户管理</el-menu-item>
-          <el-menu-item index="1-2">菜单管理</el-menu-item>
-        </el-sub-menu>
-        <el-sub-menu index="2">
-          <template #title>
-            <el-icon>
-              <setting/>
-            </el-icon>
-            <span>审批管理</span>
-          </template>
-          <el-menu-item index="2-1">休假管理</el-menu-item>
-          <el-menu-item index="2-2">待我审批</el-menu-item>
-        </el-sub-menu>
+        <tree-menu :data="userMenu" />
       </el-menu>
     </div>
     <div :class="['content-right',isCollapse?'fold':'unfold']">
@@ -81,20 +62,50 @@
 <script setup>
 import {useUserAuthStore} from "../store";
 import {useRouter} from 'vue-router'
-import {ref} from 'vue'
+import {ref, onMounted} from 'vue'
+import TreeMenu from "./TreeMenu.vue";
 const router = useRouter()
 const isCollapse = ref(false)
 
 const userauth = useUserAuthStore()
+
+
 const toggle =() =>{
   isCollapse.value = !isCollapse.value
 }
 const logout =() =>{
-
   userauth.logout()
   router.push('/login')
 }
 
+import api from "../api";
+
+const noticeCount = ref(0)
+const getNoticeCount = async () =>{
+  try {
+    const count = await api.getNoticeCount()
+    noticeCount.value = count
+  }catch (e)
+  {
+    console.error(e)
+  }
+
+}
+const userMenu = ref([])
+const getMenuList = async() =>{
+  try {
+    const menu = await api.getMenuList()
+    console.log(menu)
+    userMenu.value = menu
+  }catch (e)
+  {
+    console.error(e)
+  }
+}
+onMounted(()=>{
+  getNoticeCount()
+  getMenuList()
+})
 
 
 </script>
