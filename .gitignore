@@ -6,3 +6,4 @@ dist-ssr
 yarn.lock
 .vscode
 .idea
+package-lock.json

@@ -26,8 +26,10 @@ export const useUserAuthStore = defineStore('userauth', {
                 })
                     .then(data => {
                         console.log(data)
+                        this.token = data.token
                         this.userInfo = data
                         storage.setItem(USERINFO, data)
+                        storage.setItem(TOKEN, data.token)
                         resolve(data)
                     })
                     .catch(err => {
@@ -41,6 +43,7 @@ export const useUserAuthStore = defineStore('userauth', {
             return res
         },
         logout () {
+            storage.clearItem(TOKEN)
             storage.clearItem(USERINFO)
             this.$reset()
         }
