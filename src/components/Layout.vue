@@ -24,7 +24,9 @@
               <fold/>
             </el-icon>
           </div>
-          <div class="bread">面包屑</div>
+          <div class="bread">
+            <bread-crumb/>
+          </div>
         </div>
         <div class="user-info">
           <el-badge :is-dot="noticeCount>0" class="notice">
@@ -62,6 +64,7 @@ import {useUserAuthStore} from "../store";
 import {useRouter,useRoute} from 'vue-router'
 import {ref, onMounted} from 'vue'
 import TreeMenu from "./TreeMenu.vue";
+import BreadCrumb from "./BreadCrumb.vue";
 const router = useRouter()
 const route = useRoute()
 const isCollapse = ref(false)
