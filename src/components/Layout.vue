@@ -6,7 +6,7 @@
         <span>vue3-admin</span>
       </div>
       <el-menu
-          default-active="1-1"
+          :default-active="activeMenu"
           class="nav-menu"
           router
           background-color="#001529"
@@ -27,7 +27,7 @@
           <div class="bread">面包屑</div>
         </div>
         <div class="user-info">
-          <el-badge :is-dot="true" class="notice">
+          <el-badge :is-dot="noticeCount>0" class="notice">
             <el-icon>
               <bell/>
             </el-icon>
@@ -46,8 +46,6 @@
               </el-dropdown-menu>
             </template>
           </el-dropdown>
-
-
         </div>
       </div>
       <div class="wrapper">
@@ -61,12 +59,13 @@
 
 <script setup>
 import {useUserAuthStore} from "../store";
-import {useRouter} from 'vue-router'
+import {useRouter,useRoute} from 'vue-router'
 import {ref, onMounted} from 'vue'
 import TreeMenu from "./TreeMenu.vue";
 const router = useRouter()
+const route = useRoute()
 const isCollapse = ref(false)
-
+const activeMenu = ref(route.fullPath)
 const userauth = useUserAuthStore()
 
 

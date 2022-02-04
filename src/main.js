@@ -15,11 +15,16 @@ import storage from './utils/storage'
 app.config.globalProperties.$storage = storage
 import { createPinia } from 'pinia'
 const pinia = createPinia()
-import * as Icons from '@element-plus/icons-vue'
 // 注册Icons 全局组件
-Object.keys(Icons).forEach(key => {
-    app.component(key, Icons[key])
+import * as ELIcons from '@element-plus/icons-vue'
+Object.keys(ELIcons).forEach(key => {
+    app.component(key, ELIcons[key])
 })
+import { camelCaseToDash } from './utils'
+for (const iconName in ELIcons) {
+    app.component(`el-icon-${camelCaseToDash(iconName)}`, (ELIcons)[iconName])
+}
+
 app.use(pinia)
 app.use(router)
 app.use(ElementPlus)
